@@ -9,7 +9,7 @@ This repository contains code for a Gmail website clone created using HTML and T
 ![Screenshot 2023-11-06 175203](https://github.com/fardin-developer/Gmail-Clone-PW-Skill/blob/main/assets/MobileView.png)
 
 ## Live Website
-You can check out the live demo of the Gmail clone **[here](https://gmail-clone-pw-skill.vercel.app/).**
+You can check out the live demo of the Gmail clone **[here](https://gmail-clone-pw-skill.vercel.app).**
 
 ## Features
 
