@@ -1,0 +1,11 @@
+{
+  "name": "gmail-clone-master",
+  "version": "1.0.0",
+  "description": "This repository contains code for a Gmail website clone created using HTML and Tailwind CSS. The clone is designed to replicate the Gmail web interface. This is designed to be fully responsive, offering a seamless experience across different screen sizes.",
+  "main": "tailwind.config.js",
+ "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o style.css --watch"
+},
+  "author": "",
+  "license": "ISC"
+}

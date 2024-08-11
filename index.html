@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Clone</title>
+
+    <!-- style.css link  -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- font awsome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body class="h-screen flex flex-col md:pb-2 bg-[#f6f9ff] relative">
+
+    <button
+        class="flex md:hidden gap-4 py-4 px-5 items-center bg-sky-200 ml-2 mt-2 rounded-2xl hover:drop-shadow-md absolute bottom-4 right-4"><i
+            class="fa-solid fa-pencil text-xl"></i>
+        <p class="text-sm font-semibold">Compose</p>
+    </button>
+
+    <nav class="w-full py-2 flex px-4 text-gray-600 justify-between">
+
+        <!-- navbar left content  -->
+        <div class="flex items-center w-[70%] justify-between gap-3">
+            <div class="flex gap-1 items-center">
+                <button class="h-10 w-10 grid place-content-center rounded-full hover:bg-gray-200"><i
+                        class="fa-solid fa-bars text-lg"></i></button>
+                <div>
+                    <img class="h-9" src="./assets/gmail-logo.png" alt="">
+                </div>
+            </div>
+
+            <div
+                class=" hidden group md:flex h-full items-center rounded-full p-1 bg-[#e5f1ff] gap-2 w-[80%] max-w-2xl hover:drop-shadow-md hover:bg-white">
+                <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="h-full focus:outline-none bg-[#e5f1ff] py-2 w-full group-hover:bg-white" type="text"
+                    name="saerch" id="saerch" placeholder="Search mail">
+                <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                        class="fa-solid fa-sliders"></i></button>
+            </div>
+        </div>
+        <!-- navbar left content end here -->
+
+        <!-- navbar right content  -->
+        <div class="flex items-center gap-2">
+            <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                    class="fa-regular fa-circle-question"></i></button>
+            <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                    class="fa-solid fa-gear"></i></button>
+            <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                    class="fa-solid fa-list-ul"></i></button>
+            <button class="grid place-content-center rounded-full hover:bg-gray-200 w-7 overflow-hidden"><img
+                    src="./assets/fardin.jpg" alt="manikmaity"></button>
+        </div>
+        <!-- navbar right content ends here -->
+    </nav>
+
+    <div class="h-full w-full  grid grid-cols-10">
+
+        <!-- ------------------------- gmail left sidebar starts here --------------------- -->
+        <div class="self-start sticky top-0 col-span-2 h-full mr-2 hidden md:block">
+            <button class="flex gap-4 py-4 px-5 items-center bg-sky-200 ml-2 mt-2 rounded-2xl hover:drop-shadow-md"><i
+                    class="fa-solid fa-pencil text-xl"></i>
+                <p class="text-sm font-semibold">Compose</p>
+            </button>
+
+            <ul class="w-full text-sm my-3">
+                <li class="w-full"><a
+                        class=" font-semibold w-full flex leading-none bg-blue-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-solid fa-inbox"></i>
+                        <p class="flex w-full justify-between">Inbox <span>4,256</span></p>
+                    </a></li>
+                <li class="w-full"><a
+                        class="w-full flex leading-none hover:bg-gray-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-regular fa-star"></i>
+                        <p class="flex w-full justify-between">Starred</p>
+                    </a></li>
+                <li class="w-full"><a
+                        class="w-full flex leading-none hover:bg-gray-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-regular fa-clock"></i>
+                        <p class="flex w-full justify-between">Snoozed</p>
+                    </a></li>
+                <li class="w-full"><a
+                        class="w-full flex leading-none hover:bg-gray-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-regular fa-paper-plane"></i>
+                        <p class="flex w-full justify-between">Sent</p>
+                    </a></li>
+                <li class="w-full"><a
+                        class=" font-semibold w-full flex leading-none hover:bg-gray-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-regular fa-file"></i>
+                        <p class="flex w-full justify-between">Draft <span class="opacity-60">42</span></p>
+                    </a></li>
+                <li class="w-full"><a
+                        class="w-full flex leading-none hover:bg-gray-200 pl-6 py-2 gap-3 items-center rounded-e-full pr-2"
+                        href="#"><i class="fa-solid fa-angle-down"></i>
+                        <p class="flex w-full justify-between">More</p>
+                    </a></li>
+            </ul>
+            <div class="flex justify-between py-3 pl-6">
+                <p class="text-lg font-semibold">Labels</p>
+                <button class="grid place-content-center rounded-full hover:bg-gray-200 p-2"><i
+                        class="fa-solid fa-plus"></i></button>
+            </div>
+
+        </div>
+        <!-- ------------------------- gmail left sidebar ends here --------------------- -->
+
+
+        <div class="bg-white h-full col-span-10 md:col-span-8 rounded-2xl mx-2 flex flex-col">
+
+            <div class="bg-white w-full sticky top-0 flex py-2 px-4 text-gray-600 text-[0.7rem] justify-between">
+
+                <!-- right  -->
+                <div class="flex gap-1">
+                    <div class="flex gap-1">
+                        <input class="py-auto px-2" type="checkbox" name="select" id="select">
+                        <button
+                            class="grid place-content-center rounded-full hover:bg-gray-200  text-gray-700 px-1 h-full"><i
+                                class="fa-solid fa-caret-down"></i></button>
+                    </div>
+                    <button class="grid place-content-center rounded-full hover:bg-gray-200 p-3"><i
+                            class="fa-solid fa-rotate-right"></i></button>
+                    <button class="grid place-content-center rounded-full hover:bg-gray-200 py-3 px-4"><i
+                            class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+
+                <!-- left  -->
+                <div class="flex gap-1">
+                    <div class="flex items-center h-full rounded-md px-2 cursor-pointer hover:bg-gray-200">
+                        <p>1-50 of 4,814</p>
+                    </div>
+                    <button class="grid place-content-center rounded-full hover:bg-gray-200 p-3"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <button class="grid place-content-center rounded-full hover:bg-gray-200 p-3"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+
+            </div>
+            <!-- --------------------------sticky section end --------------------  -->
+
+
+
+            <div id="mailContainer" class="">
+                <!-- Mail items will be inserted here by JavaScript -->
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+    </div>
+
+
+    </div>
+
+
+
+
+    </div>
+    <script>
+        // Mail data
+        const mailData = [
+            {
+                sender: 'PW Skills',
+                subject: 'HR Round Selection',
+                content: 'Dear Fardin, We are pleased to inform you that you have been selected for the HR round of our recruitment process. Our team will contact you soon to schedule your interview. Best of luck!',
+                time: '08:30'
+            }
+            ,
+            {
+                sender: 'Tech Corp',
+                subject: 'New Job Opportunity!',
+                content: 'Dear Fardin, You have an exciting new job opportunity with a leading tech company. Check your dashboard for more details.',
+                time: '08:30'
+            },
+            {
+                sender: 'Job Alerts',
+                subject: 'Interview Scheduled',
+                content: 'Dear Fardin, Your interview with XYZ Company has been scheduled for next Monday. Please check your calendar for the time and location details.',
+                time: '09:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            ,
+            {
+                sender: 'Tech Corp',
+                subject: 'New Job Opportunity!',
+                content: 'Dear Fardin, You have an exciting new job opportunity with a leading tech company. Check your dashboard for more details.',
+                time: '08:30'
+            },
+            {
+                sender: 'Job Alerts',
+                subject: 'Interview Scheduled',
+                content: 'Dear Fardin, Your interview with XYZ Company has been scheduled for next Monday. Please check your calendar for the time and location details.',
+                time: '09:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            ,
+            {
+                sender: 'Tech Corp',
+                subject: 'New Job Opportunity!',
+                content: 'Dear Fardin, You have an exciting new job opportunity with a leading tech company. Check your dashboard for more details.',
+                time: '08:30'
+            },
+            {
+                sender: 'Job Alerts',
+                subject: 'Interview Scheduled',
+                content: 'Dear Fardin, Your interview with XYZ Company has been scheduled for next Monday. Please check your calendar for the time and location details.',
+                time: '09:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+            {
+                sender: 'Hiring Team',
+                subject: 'Offer Letter',
+                content: 'Dear Fardin, Congratulations! We are pleased to offer you the position at ABC Corp. Please review the attached offer letter and let us know your decision.',
+                time: '10:00'
+            },
+            {
+                sender: 'Career Services',
+                subject: 'Job Fair Invitation',
+                content: 'Dear Fardin, You are invited to the upcoming job fair hosted by our organization. Join us to explore various career opportunities.',
+                time: '11:00'
+            },
+            {
+                sender: 'HR Team',
+                subject: 'Onboarding Details',
+                content: 'Dear Fardin, Welcome aboard! Here are the details for your onboarding process. We look forward to working with you.',
+                time: '12:00'
+            },
+        ];
+
+        // Function to render a mail item
+  function renderMailItem(mail) {
+            return `
+        <div class="flex h-9 px-2 items-center text-sm border-b border-gray-200 hover:shadow-md cursor-pointer md:py-0 py-6">
+         <!-- Mail Left Section (Checkbox and Star) -->
+            <div class="flex items-center w-1/5 py-1">
+                <div class="h-full w-8 rounded-full hidden md:flex justify-center items-center hover:bg-gray-200">
+                    <input type="checkbox" name="" id="">
+                        <i class="fa-regular fa-star ml-2"></i>
+
+                </div>
+                <button class="hidden md:flex justify-center items-center ml-2 rounded-full hover:bg-gray-200 p-2">
+                </button>
+                <p class="text-black ml-1">${mail.sender}</p>
+            </div>
+            <!-- Mail Middle Section -->
+            <div class="flex leading-none items-center py-1 px-2 w-[70%] h-full justify-between">
+                <div class="flex w-[98%] overflow-hidden text-ellipsis whitespace-nowrap">
+                    <p class="text-black font-semibold">${mail.subject}</p>
+                    <p class="text-black">-${mail.content}</p>
+                </div>
+                <p class="w-[2%]">...</p>
+            </div>
+            <!-- Mail Right Section -->
+            <div class="flex leading-none items-center py-1 px-2 w-[10%] h-full font-semibold text-black justify-end ml-[10px]">
+                <p>${mail.time}</p>
+            </div>
+        </div>
+   `;
+        }
+
+
+        // Render all mail items
+        function renderAllMails() {
+            const mailContainer = document.getElementById('mailContainer');
+            mailContainer.innerHTML = mailData.map(renderMailItem).join('');
+        }
+
+        // Call the function to render the mails
+        renderAllMails();
+    </script>
+
+
+
+</body>
+
+</html>
